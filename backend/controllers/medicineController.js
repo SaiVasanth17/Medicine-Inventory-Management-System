@@ -6,7 +6,6 @@ const addMedicine = async (req, res) => {
   try {
     const { brand_name, strength, pack, mrp } = req.body;
 
-    // Validation
     if (!brand_name || !strength || !pack || !mrp) {
       return res.status(400).json({
         success: false,
