@@ -1,7 +1,5 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+export default axios.create({
+  baseURL: "https://medicine-inventory-management-system.onrender.com/api",
 });
-
-export default api;
