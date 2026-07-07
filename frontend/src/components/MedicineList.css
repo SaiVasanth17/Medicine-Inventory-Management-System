@@ -1,0 +1,59 @@
+.medicine-list{
+    margin-top:35px;
+}
+
+.medicine-list h2{
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th{
+    background:#1565c0;
+    color:white;
+    padding:14px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f5f9ff;
+}
+
+.edit-btn{
+    background:#ff9800;
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:5px;
+    margin-right:10px;
+}
+
+.edit-btn:hover{
+    background:#f57c00;
+}
+
+.delete-btn{
+    background:#e53935;
+    color:white;
+    border:none;
+    padding:8px 16px;
+    border-radius:5px;
+}
+
+.delete-btn:hover{
+    background:#c62828;
+}
+
+.no-data{
+    text-align:center;
+    padding:25px;
+    color:#777;
+}

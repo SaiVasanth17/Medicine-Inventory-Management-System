@@ -1,0 +1,64 @@
+.medicine-form{
+    background:#fafafa;
+    padding:25px;
+    border-radius:10px;
+    margin-bottom:30px;
+    border:1px solid #e5e5e5;
+}
+
+.form-group{
+    display:flex;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.form-group label{
+    width:180px;
+    font-weight:600;
+}
+
+.form-group input{
+    flex:1;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
+
+.form-group input:focus{
+    outline:none;
+    border-color:#1565c0;
+}
+
+.form-group input:read-only{
+    background:#efefef;
+}
+
+button{
+    padding:12px 30px;
+    background:#1565c0;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+}
+
+button:hover{
+    background:#0d47a1;
+}
+
+button:disabled{
+    background:#b0bec5;
+    cursor:not-allowed;
+}
+
+.cancel-btn{
+    margin-left:15px;
+    background:#757575;
+}
+
+.cancel-btn:hover{
+    background:#616161;
+}
