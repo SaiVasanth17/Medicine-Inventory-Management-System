@@ -10,15 +10,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes
 app.use("/api/medicines", medicineRoutes);
 
-// Home Route
 app.get("/", (req, res) => {
   res.send("Medicine Master API is Running...");
 });
 
-// Database Test
 app.get("/test-db", async (req, res) => {
   try {
     const result = await pool.query("SELECT NOW()");

@@ -24,18 +24,15 @@ function MedicineForm({editingMedicine,setEditingMedicine,onMedicineAdded,setMes
     }
     }, [editingMedicine]);
 
-  // Generate SKU
   const generateSKU = (brand, strength, pack) => {
     return `${brand} ${strength} ${pack}`
       .replace(/\s+/g, " ")
       .trim();
   };
 
-  // Handle Input Change
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Remove multiple spaces
     const cleanedValue = value.replace(/\s+/g, " ");
 
     const updatedMedicine = {
@@ -43,7 +40,6 @@ function MedicineForm({editingMedicine,setEditingMedicine,onMedicineAdded,setMes
       [name]: cleanedValue,
     };
 
-    // Generate SKU only when all fields are entered
     updatedMedicine.sku =
       updatedMedicine.brand_name &&
       updatedMedicine.strength &&
@@ -58,7 +54,6 @@ function MedicineForm({editingMedicine,setEditingMedicine,onMedicineAdded,setMes
     setMedicine(updatedMedicine);
   };
 
-  // Submit Form
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -71,7 +66,6 @@ function MedicineForm({editingMedicine,setEditingMedicine,onMedicineAdded,setMes
         };
 
         if (editingMedicine) {
-        // UPDATE
         const response = await api.put(
             `/medicines/${editingMedicine.id}`,
             medicineData
@@ -82,7 +76,6 @@ function MedicineForm({editingMedicine,setEditingMedicine,onMedicineAdded,setMes
 
         setEditingMedicine(null);
         } else {
-        // ADD
         const response = await api.post(
             "/medicines",
             medicineData

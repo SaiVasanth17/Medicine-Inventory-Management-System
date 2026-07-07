@@ -14,7 +14,6 @@ function MedicineList({ medicines, onEdit, onDelete }) {
 
       alert(res.data.message);
 
-      // Refresh medicine list
       onDelete();
     } catch (err) {
       alert(err.response?.data?.message || "Delete Failed");

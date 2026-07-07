@@ -23,7 +23,6 @@ const addMedicine = async (req, res) => {
 
     const sku = generateSKU(brand_name, strength, pack);
 
-    // Check duplicate SKU
     const existing = await pool.query(
       "SELECT * FROM medicines WHERE sku=$1",
       [sku]
@@ -60,7 +59,6 @@ const addMedicine = async (req, res) => {
   }
 };
 
-// Temporary placeholders
 const getMedicines = async (req, res) => {
   try {
     const result = await pool.query(
@@ -115,7 +113,6 @@ const updateMedicine = async (req, res) => {
     const { id } = req.params;
     const { brand_name, strength, pack, mrp } = req.body;
 
-    // Validation
     if (!brand_name || !strength || !pack || !mrp) {
       return res.status(400).json({
         success: false,
@@ -130,10 +127,8 @@ const updateMedicine = async (req, res) => {
       });
     }
 
-    // Generate new SKU
     const sku = generateSKU(brand_name, strength, pack);
 
-    // Check if another medicine already has this SKU
     const duplicate = await pool.query(
       "SELECT * FROM medicines WHERE sku = $1 AND id <> $2",
       [sku, id]
@@ -146,7 +141,6 @@ const updateMedicine = async (req, res) => {
       });
     }
 
-    // Update record
     const result = await pool.query(
       `UPDATE medicines
        SET brand_name=$1,
